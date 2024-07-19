@@ -16,14 +16,14 @@ class InitCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'skuul:init';
+    protected $signature = 'StepZone:init';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Install Skuul';
+    protected $description = 'Install StepZone';
 
     /**
      * No of attempts to be made to connect to the
@@ -56,7 +56,7 @@ class InitCommand extends Command
         ");
         $this->info(
             'The installation would now begin.'
-            .PHP_EOL
+                . PHP_EOL
         );
 
         try {
@@ -72,7 +72,7 @@ class InitCommand extends Command
             $this->createSuperAdmin();
             $this->finishingTouches();
         } catch (\Throwable $th) {
-            $this->error("Something went wrong!. Try Installing manually. If error persists feel free to open an issue \n Exception -> ".$th);
+            $this->error("Something went wrong!. Try Installing manually. If error persists feel free to open an issue \n Exception -> " . $th);
         }
 
         return 0;
@@ -128,7 +128,7 @@ class InitCommand extends Command
     {
         $this->line("Set up your app's environment details");
         $this->env = $this->choice(
-            'What environment are you installing skuul on?',
+            'What environment are you installing StepZone on?',
             ['local', 'production'],
             $this->env
         );
@@ -204,7 +204,7 @@ class InitCommand extends Command
 
         //if connection could not be made, max attempts were reached but could not connect to db
         if (false == $successfulConnection) {
-            $this->error('Max db attempts exceeded please retry installation'.PHP_EOL);
+            $this->error('Max db attempts exceeded please retry installation' . PHP_EOL);
 
             throw new \Exception('Max db connections reached.');
         }
@@ -266,12 +266,12 @@ class InitCommand extends Command
         $this->line('Creating super admin account');
         switch ($this->env) {
             case 'local':
-                $this->info('Since you are trying out skuul locally, we have already created a super admin account for you. Check the docs on what these credentials are if unsure');
+                $this->info('Since you are trying out StepZone locally, we have already created a super admin account for you. Check the docs on what these credentials are if unsure');
                 break;
             default:
-                $this->info('If you choose to not create a super admin now for some reason, you cen do so late by running php artisan skuul:create-super-admin');
+                $this->info('If you choose to not create a super admin now for some reason, you cen do so late by running php artisan StepZone:create-super-admin');
                 if ($this->confirm('Do you wish to create a super admin account now?', true)) {
-                    $this->call('skuul:create-super-admin');
+                    $this->call('StepZone:create-super-admin');
                 } else {
                     $this->line('skipping...');
                 }

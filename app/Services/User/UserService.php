@@ -79,8 +79,8 @@ class UserService
             'address'               => $record['address'],
             'blood_group'           => $record['blood_group'],
             'religion'              => $record['religion'] ?? null,
-            'nationality'           => $record['nationality'],
-            'state'                 => $record['state'],
+            // 'nationality'           => $record['nationality'],
+            // 'state'                 => $record['state'],
             'city'                  => $record['city'],
             'gender'                => $record['gender'],
             'phone'                 => $record['phone'],
@@ -98,7 +98,7 @@ class UserService
      */
     public function createFullName($firstname, $lastname, $othernames = null)
     {
-        return $firstname.' '.$lastname.' '.$othernames;
+        return $firstname . ' ' . $lastname . ' ' . $othernames;
     }
 
     /**

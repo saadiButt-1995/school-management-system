@@ -20,7 +20,7 @@ class CreateSuperAdmin extends Command
      *
      * @var string
      */
-    protected $signature = 'skuul:create-super-admin';
+    protected $signature = 'StepZone:create-super-admin';
 
     /**
      * The console command description.
@@ -60,7 +60,7 @@ class CreateSuperAdmin extends Command
                 });
                 $password = password(
                     'What is your password?',
-                    required:true,
+                    required: true,
                     placeholder: 'Minimum 8 characters...',
                     validate: fn (string $value) => match (true) {
                         strlen($value) < 8 => 'The password must be at least 8 characters.',
@@ -69,7 +69,7 @@ class CreateSuperAdmin extends Command
                 );
                 $passwordConfirmation = password(
                     'Confirm your password?',
-                    required:true,
+                    required: true,
                     placeholder: 'Input the same password...',
                     validate: fn (string $value) => match (true) {
                         $value !== $password => 'The password confirmation does not match.',
@@ -102,8 +102,8 @@ class CreateSuperAdmin extends Command
                 'password'    => Hash::make($password),
                 'address'     => 'super admin street',
                 'birthday'    => '1/1/1970',
-                'nationality' => 'nigeria',
-                'state'       => 'lagos',
+                // 'nationality' => 'nigeria',
+                // 'state'       => 'lagos',
                 'city'        => 'lagos',
                 'blood_group' => 'A+',
                 'gender'      => 'male',
@@ -115,7 +115,7 @@ class CreateSuperAdmin extends Command
 
             $this->line('Created super admin successfully');
         } catch (\Throwable $th) {
-            $this->error("Could not create super admin \n".$th);
+            $this->error("Could not create super admin \n" . $th);
         }
 
         return 0;

@@ -35,9 +35,9 @@
             <option value="{{$religion}}" @selected(Str::lower($religion) == str::lower($user->religion)) >{{$religion}}</option>
         @endforeach
     </x-select>
-    <div class="col-span-8">
+    {{-- <div class="col-span-8">
         <livewire:nationality-and-state-input-fields :nationality="$user->nationality"  :state="$user->state"/>
-    </div>
+    </div> --}}
     <x-input id="city" name="city" label="City *" placeholder="{{$role}}'s city" group-class="col-span-4" value="{{$user->city}}"/>
     <script>
         function showImage() {

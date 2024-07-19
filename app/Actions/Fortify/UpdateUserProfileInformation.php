@@ -26,8 +26,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'address'     => ['required', 'string', 'max:500'],
             'blood_group' => ['required', 'string', 'max:255'],
             'religion'    => ['nullable', 'string', 'max:255'],
-            'nationality' => ['required', 'string', 'max:255'],
-            'state'       => ['required', 'string', 'max:255'],
+            // 'nationality' => ['required', 'string', 'max:255'],
+            // 'state'       => ['required', 'string', 'max:255'],
             'city'        => ['required', 'string', 'max:255'],
             'gender'      => ['required', 'string', 'max:255'],
             'phone'       => ['nullable', 'string', 'max:255'],
@@ -37,8 +37,10 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->updateProfilePhoto($input['photo']);
         }
 
-        if ($input['email'] !== $user->email &&
-            $user instanceof MustVerifyEmail) {
+        if (
+            $input['email'] !== $user->email &&
+            $user instanceof MustVerifyEmail
+        ) {
             $this->updateVerifiedUser($user, $input);
         } else {
             $user->forceFill([
@@ -48,8 +50,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'address'     => $input['address'],
                 'blood_group' => $input['blood_group'],
                 'religion'    => $input['religion'] ?? '',
-                'nationality' => $input['nationality'],
-                'state'       => $input['state'],
+                // 'nationality' => $input['nationality'],
+                // 'state'       => $input['state'],
                 'city'        => $input['city'],
                 'gender'      => $input['gender'],
                 'phone'       => $input['phone'] ?? '',
@@ -76,8 +78,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'address'           => $input['address'],
             'blood_group'       => $input['blood_group'],
             'religion'          => $input['religion'] ?? '',
-            'nationality'       => $input['nationality'],
-            'state'             => $input['state'],
+            // 'nationality'       => $input['nationality'],
+            // 'state'             => $input['state'],
             'city'              => $input['city'],
             'gender'            => $input['gender'],
             'phone'             => $input['phone'] ?? '',

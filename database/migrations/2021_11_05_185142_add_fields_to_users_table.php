@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class() extends Migration {
+return new class() extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -16,8 +17,8 @@ return new class() extends Migration {
             $table->foreignId('school_id')->nullable()->constrained()->nullOnDelete()->onUpdate('cascade');
             $table->string('gender')->nullable();
             $table->date('birthday');
-            $table->string('nationality');
-            $table->string('state');
+            // $table->string('nationality');
+            // $table->string('state');
             $table->string('city');
             $table->string('religion')->nullable();
             $table->string('blood_group');

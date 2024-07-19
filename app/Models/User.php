@@ -43,9 +43,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'address',
         'blood_group',
         'religion',
-        'nationality',
+        // 'nationality',
         'phone',
-        'state',
+        // 'state',
         'city',
         'gender',
         'school_id',
@@ -261,7 +261,7 @@ class User extends Authenticatable implements MustVerifyEmail
         $email = strtolower($email);
         $email = md5($email);
 
-        return 'https://www.gravatar.com/avatar/'.$email.'?d=https%3A%2F%2Fui-avatars.com%2Fapi%2F/'.urlencode($name).'/300/EBF4FF/7F9CF5';
+        return 'https://www.gravatar.com/avatar/' . $email . '?d=https%3A%2F%2Fui-avatars.com%2Fapi%2F/' . urlencode($name) . '/300/EBF4FF/7F9CF5';
     }
 
     //accessor for birthday

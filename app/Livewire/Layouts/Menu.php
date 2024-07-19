@@ -31,12 +31,13 @@ class Menu extends Component
                 'icon' => 'fas fa-school',
                 'can'  => 'menu-school',
 
-                'submenu' => [[
-                    'type'  => 'menu-item',
-                    'text'  => 'View Schools',
-                    'route' => 'schools.index',
-                    'can'   => 'read school',
-                ],
+                'submenu' => [
+                    [
+                        'type'  => 'menu-item',
+                        'text'  => 'View Schools',
+                        'route' => 'schools.index',
+                        'can'   => 'read school',
+                    ],
                     [
                         'type'  => 'menu-item',
                         'text'  => 'Create School',
@@ -135,18 +136,18 @@ class Menu extends Component
                         'route' => 'students.promotions',
                         'can'   => 'read promotion',
                     ],
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'Graduate students',
-                        'route' => 'students.graduate',
-                        'can'   => 'graduate student',
-                    ],
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'Manage graduations',
-                        'route' => 'students.graduations',
-                        'can'   => 'view graduations',
-                    ],
+                    // [
+                    //     'type'  => 'menu-item',
+                    //     'text'  => 'Graduate students',
+                    //     'route' => 'students.graduate',
+                    //     'can'   => 'graduate student',
+                    // ],
+                    // [
+                    //     'type'  => 'menu-item',
+                    //     'text'  => 'Manage graduations',
+                    //     'route' => 'students.graduations',
+                    //     'can'   => 'view graduations',
+                    // ],
                 ],
             ],
             [
@@ -189,26 +190,26 @@ class Menu extends Component
                     ],
                 ],
             ],
-            [
-                'type'    => 'menu-item',
-                'text'    => 'Parents',
-                'icon'    => 'fas fa-user',
-                'can'     => 'menu-parent',
-                'submenu' => [
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'View parents',
-                        'route' => 'parents.index',
-                        'can'   => 'read parent',
-                    ],
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'Create parent',
-                        'route' => 'parents.create',
-                        'can'   => 'create parent',
-                    ],
-                ],
-            ],
+            // [
+            //     'type'    => 'menu-item',
+            //     'text'    => 'Parents',
+            //     'icon'    => 'fas fa-user',
+            //     'can'     => 'menu-parent',
+            //     'submenu' => [
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'View parents',
+            //             'route' => 'parents.index',
+            //             'can'   => 'read parent',
+            //         ],
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'Create parent',
+            //             'route' => 'parents.create',
+            //             'can'   => 'create parent',
+            //         ],
+            //     ],
+            // ],
             [
                 'type'    => 'menu-item',
                 'text'    => 'Admins',
@@ -249,26 +250,26 @@ class Menu extends Component
                     ],
                 ],
             ],
-            [
-                'type'    => 'menu-item',
-                'text'    => 'Semesters',
-                'icon'    => 'fas fa-clock',
-                'can'     => 'menu-semester',
-                'submenu' => [
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'View semesters',
-                        'route' => 'semesters.index',
-                        'can'   => 'read semester',
-                    ],
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'Create semester',
-                        'route' => 'semesters.create',
-                        'can'   => 'create semester',
-                    ],
-                ],
-            ],
+            // [
+            //     'type'    => 'menu-item',
+            //     'text'    => 'Semesters',
+            //     'icon'    => 'fas fa-clock',
+            //     'can'     => 'menu-semester',
+            //     'submenu' => [
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'View semesters',
+            //             'route' => 'semesters.index',
+            //             'can'   => 'read semester',
+            //         ],
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'Create semester',
+            //             'route' => 'semesters.create',
+            //             'can'   => 'create semester',
+            //         ],
+            //     ],
+            // ],
             [
                 'type'    => 'menu-item',
                 'text'    => 'Fees',
@@ -340,156 +341,156 @@ class Menu extends Component
                 ],
             ],
             ['header' => 'Academics', 'can' => 'header-academics'],
-            [
-                'type'    => 'menu-item',
-                'text'    => 'Notices',
-                'icon'    => 'fas fa-bell',
-                'can'     => 'menu-notice',
-                'submenu' => [
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'View notices',
-                        'route' => 'notices.index',
-                        'can'   => 'read notice',
-                    ],
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'Create notice',
-                        'route' => 'notices.create',
-                        'can'   => 'create notice',
-                    ],
-                ],
-            ],
-            [
-                'type'    => 'menu-item',
-                'text'    => 'Syllabi',
-                'icon'    => 'fas fa-list-alt',
-                'can'     => 'menu-syllabus',
-                'submenu' => [
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'View Syllabi',
-                        'route' => 'syllabi.index',
-                        'can'   => 'read syllabus',
-                    ],
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'Create Syllabus',
-                        'route' => 'syllabi.create',
-                        'can'   => 'create syllabus',
-                    ],
-                ],
-            ],
-            [
-                'type'    => 'menu-item',
-                'text'    => 'Timetables',
-                'icon'    => 'fas fa-tasks',
-                'can'     => 'menu-timetable',
-                'submenu' => [
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'View Timetables',
-                        'route' => 'timetables.index',
-                        'can'   => 'read timetable',
-                    ],
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'Create Timetable',
-                        'route' => 'timetables.create',
-                        'can'   => 'create timetable',
-                    ],
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'View custom items',
-                        'route' => 'custom-timetable-items.index',
-                        'can'   => 'read custom timetable items',
-                    ],
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'Create Custom Items',
-                        'route' => 'custom-timetable-items.create',
-                        'can'   => 'create custom timetable items',
-                    ],
-                ],
-            ],
-            [
-                'type'    => 'menu-item',
-                'text'    => 'Exams',
-                'icon'    => 'fas fa-book-open',
-                'can'     => 'menu-exam',
-                'submenu' => [
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'View Exams',
-                        'route' => 'exams.index',
-                        'can'   => 'read exam',
-                    ],
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'Create Exam',
-                        'route' => 'exams.create',
-                        'can'   => 'create exam',
-                    ],
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'Manage Exam records',
-                        'route' => 'exam-records.index',
-                        'can'   => 'update exam record',
-                    ],
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'Exam tabulation sheet',
-                        'route' => 'exams.tabulation',
-                        'can'   => 'read exam',
-                    ],
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'Semester Result Sheet',
-                        'route' => 'exams.semester-result-tabulation',
-                        'can'   => 'read exam',
-                    ],
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'Academic Year Result Sheet',
-                        'route' => 'exams.academic-year-result-tabulation',
-                        'can'   => 'read exam',
-                    ],
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'Result Checker',
-                        'route' => 'exams.result-checker',
-                        'can'   => 'check result',
-                    ],
-                ],
-            ],
-            [
-                'type'    => 'menu-item',
-                'text'    => 'Grade Systems',
-                'icon'    => 'fa fa-graduation-cap',
-                'can'     => 'menu-grade-system',
-                'submenu' => [
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'View Grading System',
-                        'route' => 'grade-systems.index',
-                        'can'   => 'read grade system',
-                    ],
-                    [
-                        'type'  => 'menu-item',
-                        'text'  => 'Create Grades',
-                        'route' => 'grade-systems.create',
-                        'can'   => 'create grade system',
-                    ],
-                ],
-            ],
-            [
-                'type'  => 'menu-item',
-                'text'  => 'View Logs',
-                'route' => 'log-viewer.index',
-                'icon'  => 'fa fa-sticky-note',
-                //this menu item checks with roles for now so this prevents other non super users from viewing menu item
-                'can' => 'view logs',
-            ],
+            // [
+            //     'type'    => 'menu-item',
+            //     'text'    => 'Notices',
+            //     'icon'    => 'fas fa-bell',
+            //     'can'     => 'menu-notice',
+            //     'submenu' => [
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'View notices',
+            //             'route' => 'notices.index',
+            //             'can'   => 'read notice',
+            //         ],
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'Create notice',
+            //             'route' => 'notices.create',
+            //             'can'   => 'create notice',
+            //         ],
+            //     ],
+            // ],
+            // [
+            //     'type'    => 'menu-item',
+            //     'text'    => 'Syllabi',
+            //     'icon'    => 'fas fa-list-alt',
+            //     'can'     => 'menu-syllabus',
+            //     'submenu' => [
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'View Syllabi',
+            //             'route' => 'syllabi.index',
+            //             'can'   => 'read syllabus',
+            //         ],
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'Create Syllabus',
+            //             'route' => 'syllabi.create',
+            //             'can'   => 'create syllabus',
+            //         ],
+            //     ],
+            // ],
+            // [
+            //     'type'    => 'menu-item',
+            //     'text'    => 'Timetables',
+            //     'icon'    => 'fas fa-tasks',
+            //     'can'     => 'menu-timetable',
+            //     'submenu' => [
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'View Timetables',
+            //             'route' => 'timetables.index',
+            //             'can'   => 'read timetable',
+            //         ],
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'Create Timetable',
+            //             'route' => 'timetables.create',
+            //             'can'   => 'create timetable',
+            //         ],
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'View custom items',
+            //             'route' => 'custom-timetable-items.index',
+            //             'can'   => 'read custom timetable items',
+            //         ],
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'Create Custom Items',
+            //             'route' => 'custom-timetable-items.create',
+            //             'can'   => 'create custom timetable items',
+            //         ],
+            //     ],
+            // ],
+            // [
+            //     'type'    => 'menu-item',
+            //     'text'    => 'Exams',
+            //     'icon'    => 'fas fa-book-open',
+            //     'can'     => 'menu-exam',
+            //     'submenu' => [
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'View Exams',
+            //             'route' => 'exams.index',
+            //             'can'   => 'read exam',
+            //         ],
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'Create Exam',
+            //             'route' => 'exams.create',
+            //             'can'   => 'create exam',
+            //         ],
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'Manage Exam records',
+            //             'route' => 'exam-records.index',
+            //             'can'   => 'update exam record',
+            //         ],
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'Exam tabulation sheet',
+            //             'route' => 'exams.tabulation',
+            //             'can'   => 'read exam',
+            //         ],
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'Semester Result Sheet',
+            //             'route' => 'exams.semester-result-tabulation',
+            //             'can'   => 'read exam',
+            //         ],
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'Academic Year Result Sheet',
+            //             'route' => 'exams.academic-year-result-tabulation',
+            //             'can'   => 'read exam',
+            //         ],
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'Result Checker',
+            //             'route' => 'exams.result-checker',
+            //             'can'   => 'check result',
+            //         ],
+            //     ],
+            // ],
+            // [
+            //     'type'    => 'menu-item',
+            //     'text'    => 'Grade Systems',
+            //     'icon'    => 'fa fa-graduation-cap',
+            //     'can'     => 'menu-grade-system',
+            //     'submenu' => [
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'View Grading System',
+            //             'route' => 'grade-systems.index',
+            //             'can'   => 'read grade system',
+            //         ],
+            //         [
+            //             'type'  => 'menu-item',
+            //             'text'  => 'Create Grades',
+            //             'route' => 'grade-systems.create',
+            //             'can'   => 'create grade system',
+            //         ],
+            //     ],
+            // ],
+            // [
+            //     'type'  => 'menu-item',
+            //     'text'  => 'View Logs',
+            //     'route' => 'log-viewer.index',
+            //     'icon'  => 'fa fa-sticky-note',
+            //     //this menu item checks with roles for now so this prevents other non super users from viewing menu item
+            //     'can' => 'view logs',
+            // ],
         ];
     }
 

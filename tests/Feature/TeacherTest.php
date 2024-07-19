@@ -45,8 +45,8 @@ class TeacherTest extends TestCase
             'password'              => 'password',
             'password_confirmation' => 'password',
             'gender'                => 'male',
-            'nationality'           => 'nigeria',
-            'state'                 => 'lagos',
+            // 'nationality'           => 'nigeria',
+            // 'state'                 => 'lagos',
             'city'                  => 'lagos',
             'blood_group'           => 'a+',
             'address'               => 'test address',
@@ -74,8 +74,8 @@ class TeacherTest extends TestCase
             'password'              => 'password',
             'password_confirmation' => 'password',
             'gender'                => 'male',
-            'nationality'           => 'nigeria',
-            'state'                 => 'lagos',
+            // 'nationality'           => 'nigeria',
+            // 'state'                 => 'lagos',
             'city'                  => 'lagos',
             'blood_group'           => 'a+',
             'address'               => 'test address',
@@ -115,15 +115,15 @@ class TeacherTest extends TestCase
         $teacher = User::factory()->create();
         $teacher->assignRole('teacher');
 
-        $this->unauthorized_user()->put('dashboard/teachers/'.$teacher->id, [
+        $this->unauthorized_user()->put('dashboard/teachers/' . $teacher->id, [
             'first_name'            => 'Test',
             'last_name'             => 'teacher 2',
             'email'                 => $email,
             'password'              => 'password',
             'password_confirmation' => 'password',
             'gender'                => 'male',
-            'nationality'           => 'nigeria',
-            'state'                 => 'lagos',
+            // 'nationality'           => 'nigeria',
+            // 'state'                 => 'lagos',
             'city'                  => 'lagos',
             'blood_group'           => 'a+',
             'address'               => 'test address',
@@ -145,7 +145,7 @@ class TeacherTest extends TestCase
         $teacher->assignRole('teacher');
         $email = $this->faker()->freeEmail();
 
-        $this->authorized_user(['update teacher'])->put('dashboard/teachers/'.$teacher->id, [
+        $this->authorized_user(['update teacher'])->put('dashboard/teachers/' . $teacher->id, [
             'first_name'            => 'Test 2',
             'other_names'           => 'teacher 2',
             'last_name'             => 'teacher',
@@ -153,8 +153,8 @@ class TeacherTest extends TestCase
             'password'              => 'password',
             'password_confirmation' => 'password',
             'gender'                => 'male',
-            'nationality'           => 'nigeria',
-            'state'                 => 'lagos',
+            // 'nationality'           => 'nigeria',
+            // 'state'                 => 'lagos',
             'city'                  => 'lagos',
             'blood_group'           => 'a+',
             'address'               => 'test address',
@@ -172,7 +172,7 @@ class TeacherTest extends TestCase
         $teacher = User::factory()->create();
         $teacher->assignRole('teacher');
         $this->unauthorized_user()
-            ->delete('dashboard/teachers/'.$teacher->id)
+            ->delete('dashboard/teachers/' . $teacher->id)
             ->assertForbidden();
 
         $this->assertModelExists($teacher) && $this->assertNotSoftDeleted($teacher);
@@ -183,7 +183,7 @@ class TeacherTest extends TestCase
         $teacher = User::factory()->create();
         $teacher->assignRole('teacher');
         $this->authorized_user(['delete teacher'])
-            ->delete('dashboard/teachers/'.$teacher->id)
+            ->delete('dashboard/teachers/' . $teacher->id)
             ->assertRedirect();
 
         $this->assertModelExists($teacher) && $this->assertSoftDeleted($teacher);

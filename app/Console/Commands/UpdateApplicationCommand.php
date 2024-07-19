@@ -11,7 +11,7 @@ class UpdateApplicationCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'skuul:update';
+    protected $signature = 'StepZone:update';
 
     /**
      * The console command description.
@@ -37,7 +37,7 @@ class UpdateApplicationCommand extends Command
             $this->optimize();
             $this->call('up');
         } catch (\Throwable $th) {
-            $this->error("Something went wrong!. Try updating manually. If error persists feel free to open an issue \n \n Exception -> ".$th);
+            $this->error("Something went wrong!. Try updating manually. If error persists feel free to open an issue \n \n Exception -> " . $th);
         }
 
         return 0;
@@ -45,19 +45,19 @@ class UpdateApplicationCommand extends Command
 
     private function intro()
     {
-        $this->line('<bg=blue>Welcome to the Skuul update wizard</>');
+        $this->line('<bg=blue>Welcome to the StepZone update wizard</>');
         $this->warn("it's important to be connected to the internet,  always have a backup of both your codebase and your database before making updates. Review the release notes before updating, and test your system after updating to ensure everything is working correctly. If an issue arises, the community or dedicated support channels can provide help. Also, have a rollback plan in place.");
 
         sleep(2);
 
         //verify user is not root
         if (posix_getuid() == 0) {
-            $this->error('This Command cannot be run by root user, thank you for using Skuul');
+            $this->error('This Command cannot be run by root user, thank you for using StepZone');
             exit;
         }
 
         if (!$this->confirm('Do you wish to continue?')) {
-            $this->error('Operation cancelled, thank you for using Skuul');
+            $this->error('Operation cancelled, thank you for using StepZone');
             exit;
         }
     }
@@ -75,8 +75,8 @@ class UpdateApplicationCommand extends Command
 
         $newVersionAsArray = $this->splitVersionNumber($newVersion);
 
-        $this->info('Old Version: '.$oldVersion);
-        $this->info('New Version: '.$newVersion);
+        $this->info('Old Version: ' . $oldVersion);
+        $this->info('New Version: ' . $newVersion);
 
         if ($oldVersionAsArray[0] != $newVersionAsArray[0]) {
             shell_exec('git checkout $(git rev-list --tags --max-count=1 )');

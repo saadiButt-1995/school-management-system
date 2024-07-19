@@ -13,7 +13,7 @@
             ['name' => 'name'],
             ['type' => 'dropdown', 'name' => 'actions','links' => [
                 ['href' => 'academic-years.edit', 'text' => 'Edit', 'icon' => 'fas fa-cog',],
-                ['href' => 'academic-years.show', 'text' => 'View', 'icon' => 'fas fa-eye',  ],
+                // ['href' => 'academic-years.show', 'text' => 'View', 'icon' => 'fas fa-eye',  ],
             ]],
             ['type' => 'delete', 'name' => 'Delete', 'action' => 'academic-years.destroy',]
         ]"/>

@@ -45,8 +45,8 @@ class AdminTest extends TestCase
             'password'              => 'password',
             'password_confirmation' => 'password',
             'gender'                => 'male',
-            'nationality'           => 'nigeria',
-            'state'                 => 'lagos',
+            // 'nationality'           => 'nigeria',
+            // 'state'                 => 'lagos',
             'city'                  => 'lagos',
             'blood_group'           => 'a+',
             'address'               => 'test address',
@@ -74,8 +74,8 @@ class AdminTest extends TestCase
             'password'              => 'password',
             'password_confirmation' => 'password',
             'gender'                => 'male',
-            'nationality'           => 'nigeria',
-            'state'                 => 'lagos',
+            // 'nationality'           => 'nigeria',
+            // 'state'                 => 'lagos',
             'city'                  => 'lagos',
             'blood_group'           => 'a+',
             'address'               => 'test address',
@@ -115,15 +115,15 @@ class AdminTest extends TestCase
         $admin = User::factory()->create();
         $admin->assignRole('admin');
 
-        $this->unauthorized_user()->put('dashboard/admins/'.$admin->id, [
+        $this->unauthorized_user()->put('dashboard/admins/' . $admin->id, [
             'first_name'            => 'Test',
             'last_name'             => 'admin 2',
             'email'                 => $email,
             'password'              => 'password',
             'password_confirmation' => 'password',
             'gender'                => 'male',
-            'nationality'           => 'nigeria',
-            'state'                 => 'lagos',
+            // 'nationality'           => 'nigeria',
+            // 'state'                 => 'lagos',
             'city'                  => 'lagos',
             'blood_group'           => 'a+',
             'address'               => 'test address',
@@ -145,7 +145,7 @@ class AdminTest extends TestCase
         $admin->assignRole('admin');
         $email = $this->faker()->freeEmail();
 
-        $this->authorized_user(['update admin'])->put('dashboard/admins/'.$admin->id, [
+        $this->authorized_user(['update admin'])->put('dashboard/admins/' . $admin->id, [
             'first_name'            => 'Test 2',
             'other_names'           => 'admin 2',
             'last_name'             => 'admin',
@@ -153,8 +153,8 @@ class AdminTest extends TestCase
             'password'              => 'password',
             'password_confirmation' => 'password',
             'gender'                => 'male',
-            'nationality'           => 'nigeria',
-            'state'                 => 'lagos',
+            // 'nationality'           => 'nigeria',
+            // 'state'                 => 'lagos',
             'city'                  => 'lagos',
             'blood_group'           => 'a+',
             'address'               => 'test address',
@@ -172,7 +172,7 @@ class AdminTest extends TestCase
         $admin = User::factory()->create();
         $admin->assignRole('admin');
         $this->unauthorized_user()
-            ->delete('dashboard/admins/'.$admin->id)
+            ->delete('dashboard/admins/' . $admin->id)
             ->assertForbidden();
 
         $this->assertModelExists($admin) && $this->assertNotSoftDeleted($admin);
@@ -183,7 +183,7 @@ class AdminTest extends TestCase
         $admin = User::factory()->create();
         $admin->assignRole('admin');
         $this->authorized_user(['delete admin'])
-            ->delete('dashboard/admins/'.$admin->id)
+            ->delete('dashboard/admins/' . $admin->id)
             ->assertRedirect();
 
         $this->assertModelExists($admin) && $this->assertSoftDeleted($admin);
